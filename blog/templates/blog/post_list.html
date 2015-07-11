@@ -8,15 +8,13 @@
 		</div>
 
 		<div>
-			<p>published: 1.07.2015, 12:04</p>
-			<h2>My first post</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-		</div>
-
-		<div>
-			<p>Published: 10.07.2015, 20:00</p>
-			<h2>My second post</h2>
-			<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+			{% for post in posts%}
+				<div>
+					<p>published: {{ post.published_date }}</p>
+					<h1>{{ post.title }}</h1>
+					<p>{{ post.text|linebreaks }}</p>
+				</div>
+			{% endfor %}
 		</div>
 	</body>	
 </html>
